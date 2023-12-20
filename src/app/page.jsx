@@ -1,13 +1,147 @@
-import React from 'react'
+import React from 'react';
+import Swiper from '../../components/swiper';
 
 const HomePage = () => {
     return (
-        <section className='w-full flex-center flex-col bg-slate-500 border-2 color-whie'>
-            <h1 className='text-white'>This is the homepage</h1>
-        </section>
+        <div className='bg-gray-900 text-white'>
+            <div className='mb-20'>
+                <Swiper />
+            </div>
+            <div className='bg-gray-900 text-white'>
+                <section className='container mx-auto py-12'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
+                        <div className='text-center md:text-left'>
+                            <h1 className='text-4xl font-bold mb-4'>Welcome to Our NGO</h1>
+                            <p className='text-lg mb-6'>
+                                Our NGO is dedicated to making a positive impact on the community. Through various initiatives and programs, we strive to bring about positive changes in people's lives.
+                            </p>
+                            <p className='text-lg mb-6'>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat varius sem, vel sodales velit eleifend id.
+                            </p>
+                            <button className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300'>
+                                Get Involved
+                            </button>
+                        </div>
+                        <div className='text-center'>
+                            {/* You can add an image or an illustration related to your NGO here */}
+                            <img src='/images/ngo-image.jpg' alt='NGO Image' className='mx-auto rounded-md shadow-md' />
+                        </div>
+                    </div>
+                </section>
+                <section className='bg-gray-800 py-12'>
+                    <div className='container mx-auto'>
+                        <h2 className='text-3xl font-bold mb-4 text-center'>Our Mission</h2>
+                        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+                            <div className='border p-6 rounded-md'>
+                                <h3 className='text-xl font-semibold mb-4'>What We Do</h3>
+                                <p>
+                                    We focus on providing education, healthcare, and support to underprivileged communities. Our aim is to create sustainable solutions to societal issues.
+                                </p>
+                            </div>
+                            <div className='border p-6 rounded-md'>
+                                <h3 className='text-xl font-semibold mb-4'>How You Can Help</h3>
+                                <p>
+                                    Your contributions and support enable us to continue our mission. Explore various ways to get involved, donate, or volunteer.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='bg-gray-800 py-12'>
+                    <div className='container mx-auto text-center'>
+                        <h2 className='text-3xl font-bold mb-4'>Our Impact</h2>
+                        <p className='text-lg mb-8'>
+                            We're proud of the positive changes we've brought about in people's lives. Here are some highlights of our impactful work.
+                        </p>
+                        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                            <div className='border p-6 rounded-md'>
+                                <h3 className='text-xl font-semibold mb-4'>Education Initiatives</h3>
+                                <p>
+                                    Number of students enrolled, educational programs conducted, or success stories of students.
+                                </p>
+                            </div>
+                            <div className='border p-6 rounded-md'>
+                                <h3 className='text-xl font-semibold mb-4'>Healthcare Support</h3>
+                                <p>
+                                    Health campaigns held, medical services provided, or testimonials from beneficiaries.
+                                </p>
+                            </div>
+                            <div className='border p-6 rounded-md'>
+                                <h3 className='text-xl font-semibold mb-4'>Community Development</h3>
+                                <p>
+                                    Community projects completed, infrastructure developed, or community testimonials.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section className='container mx-auto py-12'>
+                    <h2 className='text-3xl font-bold mb-4 text-center'>Upcoming Events</h2>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+                        {/* Example event cards */}
+                        <div className='border p-6 rounded-md'>
+                            <h3 className='text-xl font-semibold mb-4'>Event Title 1</h3>
+                            <p>
+                                Description or details about the upcoming event. Date, time, location, and how to participate.
+                            </p>
+                        </div>
+                        <div className='border p-6 rounded-md'>
+                            <h3 className='text-xl font-semibold mb-4'>Event Title 2</h3>
+                            <p>
+                                Description or details about the upcoming event. Date, time, location, and how to participate.
+                            </p>
+                        </div>
+                        {/* Add more event cards as needed */}
+                    </div>
+                    <div className='flex justify-center mt-8'>
+                        <button className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300'>
+                            View All Events
+                        </button>
+                    </div>
+                </section>
+                <footer className="bg-gray-800 text-white py-6">
+                    <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center">
+                        {/* Left side: Contact, Address, Mail, Socials */}
+                        <div className="mb-4 lg:mb-0">
+                            <p className="mb-2">Contact: +123456789</p>
+                            <p className="mb-2">Address: 123 NGO Street, City</p>
+                            <p>Email: info@example.com</p>
+                            <div className="flex gap-4 mt-2">
+                                {/* Social media icons */}
+                                {/* Add your social media icons here */}
+                                <a href="#" className="text-white hover:text-blue-500 transition duration-300">
+                                    <i className="fab fa-facebook-f"></i>
+                                </a>
+                                {/* Add more social media icons as needed */}
+                            </div>
+                        </div>
+                        {/* Center: Logo */}
+                        <div className="text-center lg:text-left mb-4 lg:mb-0">
+                            {/* Your NGO logo */}
+                            <img src="/images/ngo-logo.png" alt="NGO Logo" className="w-16 h-16" />
+                        </div>
+                        {/* Right side: Sign up for Newsletter */}
+                        <div className="text-center lg:text-right">
+                            <p className="mb-2">Sign up for Newsletter</p>
+                            {/* Newsletter signup form */}
+                            <form className="flex justify-center lg:justify-end">
+                                <input
+                                    type="email"
+                                    placeholder="Your email"
+                                    className="border py-2 px-3 rounded-md mr-2"
+                                />
+                                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                                    Subscribe
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                    {/* Bottom: Copyright */}
+                    <p className="text-center text-xs mt-4">&copy; 2023 Your NGO. All Rights Reserved.</p>
+                </footer>
+            </div>
+        </div>
+    );
+};
 
-
-    )
-}
-
-export default HomePage
+export default HomePage;
