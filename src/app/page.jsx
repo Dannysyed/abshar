@@ -1,6 +1,7 @@
 import React from 'react';
 import Swiper from '../../components/swiper';
-
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { FiMousePointer, FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 const HomePage = () => {
     return (
         <div className='bg-gray-900 text-white'>
@@ -99,26 +100,25 @@ const HomePage = () => {
                         </button>
                     </div>
                 </section>
-                <footer className="bg-gray-800 text-white py-6">
+                <footer className="bg-gray-800 text-white py-6 rounded-3xl">
                     <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center">
                         {/* Left side: Contact, Address, Mail, Socials */}
-                        <div className="mb-4 lg:mb-0">
+                        <div className="mb-4 lg:mb-0 lg:pr-8">
                             <p className="mb-2">Contact: +123456789</p>
                             <p className="mb-2">Address: 123 NGO Street, City</p>
                             <p>Email: info@example.com</p>
-                            <div className="flex gap-4 mt-2">
-                                {/* Social media icons */}
-                                {/* Add your social media icons here */}
-                                <a href="#" className="text-white hover:text-blue-500 transition duration-300">
-                                    <i className="fab fa-facebook-f"></i>
-                                </a>
-                                {/* Add more social media icons as needed */}
+                            <div className="flex gap-4 mt-2 lg:mt-0">
+                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FiFacebook style={{ fontSize: '24px' }} /></a>
+                                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FiInstagram style={{ fontSize: '24px' }} /></a>
+                                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FiTwitter style={{ fontSize: '24px' }} /></a>
+                                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FiLinkedin style={{ fontSize: '24px' }} /></a>
+                                <a href="https://www.github.com" target="_blank" rel="noopener noreferrer"><FiGithub style={{ fontSize: '24px' }} /></a>
                             </div>
                         </div>
                         {/* Center: Logo */}
                         <div className="text-center lg:text-left mb-4 lg:mb-0">
                             {/* Your NGO logo */}
-                            <img src="/images/ngo-logo.png" alt="NGO Logo" className="w-16 h-16" />
+                            <img src="/images/ngo-logo.png" alt="NGO Logo" className="w-16 h-16 mx-auto lg:mx-0" />
                         </div>
                         {/* Right side: Sign up for Newsletter */}
                         <div className="text-center lg:text-right">

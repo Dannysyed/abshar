@@ -65,20 +65,21 @@ function Swiper() {
                 onExited={() => setAnimating(false)}
                 key={item.src}
                 className="position-relative"
-                style={{ maxHeight: '500px' }} // Set a maximum height for the image
             >
-                <Image
-                    src={item.src}
-                    alt={item.altText}
-                    className='w-[100vw] h-[80vh]'
-                    objectFit="cover"
-                    objectPosition="center"
-                />
-                <div className="position-absolute w-100 h-100 bg-black opacity-50 top-0"></div>
+                <div className="w-full md:w-3/4 mx-auto">
+                    <Image
+                        src={item.src}
+                        alt={item.altText}
+                        className="w-full h-auto"
+                        objectFit="cover"
+                        objectPosition="center"
+                    />
+                </div>
+                <div className="position-absolute w-full h-full bg-black opacity-50 top-0"></div>
                 <CarouselCaption
                     captionText={item.description}
                     captionHeader={item.caption}
-                    className="position-absolute w-100 text-white"
+                    className="position-absolute w-full text-white"
                 />
             </CarouselItem>
         );
