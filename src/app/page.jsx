@@ -1,7 +1,11 @@
+'use client'
 import React from 'react';
 import Swiper from '../../components/swiper';
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { FiMousePointer, FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
+import Lottie from "lottie-react";
+
+import codingAni from '../../public/images/Animation - 1704125449837.json'
 const HomePage = () => {
     return (
         <div className='body_color'>
@@ -23,9 +27,8 @@ const HomePage = () => {
                                 Get Involved
                             </button>
                         </div>
-                        <div className='text-center'>
-                            {/* You can add an image or an illustration related to your NGO here */}
-                            <img src='/images/ngo-image.jpg' alt='NGO Image' className='mx-auto rounded-md shadow-md' />
+                        <div className='basis-2/5 ' >
+                            <Lottie animationData={codingAni} loop={true} className='h-[50vh] sm:h-[70vh]' />
                         </div>
                     </div>
                 </section>
