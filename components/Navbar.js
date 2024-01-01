@@ -4,7 +4,15 @@ import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import absharlogo from '../public/images/AbhsarLogo.png'
+import { FiActivity } from "react-icons/fi";
 
+const ButtonWrapper = () => {
+    return (
+        <div className="bg-slate-100 min-h-[200px] flex items-center justify-center">
+            <NeumorphismButton />
+        </div>
+    );
+};
 const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
     const [isBread, setIsBread] = useState(false);
@@ -31,7 +39,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className='flex p-7 text-black  justify-around flex-col  text-center sm:flex-row gap-4 md:gap-12 box_shadow'>
+        <nav className='flex p-7 text-black  justify-around flex-col  text-center sm:flex-row gap-4 md:gap-12 box_shadow nav_bg'>
             <div className='flex justify-between items-center'>
                 <h2 className='text-[1.4rem] sm:text-[0.9rem] md:text-[1rem] lg:text-[1.4rem]'>
                     <Link href={'/ '}>
@@ -50,7 +58,7 @@ const Navbar = () => {
                 <ul className="flex gap-5 flex-col items-center sm:flex-row sm:gap-4 md:gap-4 lg:gap-12">
                     {menuItems.map(({ href, title }) => (
                         <li key={title}>
-                            <Link href={href} className={`text-black hover:text-slate-200 font-bold hover:bg-slate-700 cursor-pointer`}>
+                            <Link href={href} className={`text-black hover:text-slate-200 font-bold hover: cursor-pointer decoration-transparent`}>
                                 {title}
                             </Link>
                         </li>
@@ -63,7 +71,7 @@ const Navbar = () => {
                     <ul className="flex gap-5 flex-col items-center sm:flex-row">
                         {menuItems.map(({ href, title }) => (
                             <li key={title}>
-                                <Link href={href} className={`text-black hover:text-slate-200 hover:bg-slate-700`}>
+                                <Link href={href} className={`text-black hover:text-white decoration-transparent`}>
                                     {title}
                                 </Link>
                             </li>
@@ -72,12 +80,25 @@ const Navbar = () => {
                 </div>
             }
             {/* Donate Now Button */}
-            <div>
-                <Link href="/donate">
-                    <button className="primary_color text-white font-semibold py-2 px-4 rounded-md shadow-sm hover:bg-primary_color hover:text-white transition duration-300 ease-in-out">
-                        Donate Now
-                    </button>
-                </Link>
+            <div className='flex justify-center sm:block'>
+
+                <button
+                    className={`
+         px-4 py-2 rounded-full 
+        flex items-center gap-2 
+        text-slate-500
+        shadow-[-5px_-5px_10px_rgba(255,_255,_255,_0.8),_5px_5px_10px_rgba(0,_0,_0,_0.25)]
+        
+        transition-all
+
+        hover:shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
+        hover:text-green-800
+    `}
+                >
+                    <FiActivity />
+                    <span>Donate Now</span>
+                </button>
+
             </div>
         </nav>
     )
