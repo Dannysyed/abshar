@@ -57,7 +57,7 @@ const HomePage = () => {
                                     Your contributions and support enable us to continue our mission. Explore various ways to get involved, donate, or volunteer.
                                 </p>
                                 <div className='basis-2/5 ' >
-                                    <Lottie animationData={heart} loop={true} className='h-[50vh] sm:h-[20vh]' />
+                                    <Lottie animationData={heart} loop={true} className='h-[22vh] sm:h-[20vh]' />
                                 </div>
                             </div>
                         </div>
