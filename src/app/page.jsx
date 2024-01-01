@@ -26,7 +26,7 @@ const HomePage = () => {
                             <p className='text-lg mb-6'>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat varius sem, vel sodales velit eleifend id.
                             </p>
-                            <button className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300'>
+                            <button className='bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300'>
                                 Get Involved
                             </button>
                         </div>
@@ -35,17 +35,23 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='body_color_dark py-12'>
+                <section className='body_color_dark py-12 relative'>
                     <div className='container mx-auto'>
                         <h2 className='text-3xl font-bold mb-4 text-center'>Our Mission</h2>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-                            <div className='border p-6 rounded-md'>
+                            <div className='border p-6 rounded-md relative hover:scale-card transition-transform duration-300'>
+                                {/* Gradient color on top of the card */}
+                                <div className='absolute inset-0 rounded-t-md bg-gradient-to-b from-transparent to-body_color_dark opacity-90'></div>
                                 <h3 className='text-xl font-semibold mb-4'>What We Do</h3>
                                 <p>
                                     We focus on providing education, healthcare, and support to underprivileged communities. Our aim is to create sustainable solutions to societal issues.
                                 </p>
+                                {/* See Pics button */}
+                                <button className='bg-gradient-to-r from-[#your_color] to-[#your_color] text-white py-2 px-4 mt-4 rounded-md shadow-md hover:shadow-lg'>
+                                    See Pics
+                                </button>
                             </div>
-                            <div className='border p-6 rounded-md'>
+                            <div className='border p-6 rounded-md shadow-lg hover:scale-card transition-transform duration-300'>
                                 <h3 className='text-xl font-semibold mb-4'>How You Can Help</h3>
                                 <p>
                                     Your contributions and support enable us to continue our mission. Explore various ways to get involved, donate, or volunteer.
@@ -54,6 +60,8 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
+
+
                 <section className='body_color py-12'>
                     <div className='container mx-auto text-center'>
                         <h2 className='text-3xl font-bold mb-4'>Our Impact</h2>
@@ -101,7 +109,7 @@ const HomePage = () => {
                         {/* Add more event cards as needed */}
                     </div>
                     <div className='flex justify-center mt-8'>
-                        <button className='bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300'>
+                        <button className='bg-green-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300'>
                             View All Events
                         </button>
                     </div>
@@ -136,7 +144,7 @@ const HomePage = () => {
                                     placeholder="Your email"
                                     className="border py-2 px-3 rounded-md mr-2"
                                 />
-                                <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                                <button className="bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                                     Subscribe
                                 </button>
                             </form>
