@@ -19,7 +19,7 @@ const HomePage = () => {
                 <section className='container mx-auto py-12'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
                         <div className='text-center md:text-left'>
-                            <h1 className='text-4xl font-bold mb-4'>Welcome to Our NGO</h1>
+                            <h1 className='text-4xl font-bold mb-4'>Welcome to Abshar</h1>
                             <p className='text-lg mb-6'>
                                 Our NGO is dedicated to making a positive impact on the community. Through various initiatives and programs, we strive to bring about positive changes in people's lives.
                             </p>
@@ -121,14 +121,14 @@ const HomePage = () => {
                     <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center ">
                         {/* Left side: Contact, Address, Mail, Socials */}
                         <div className="mb-4 lg:mb-0 lg:pr-8">
-                            <p className="mb-2">Contact: +123456789</p>
-                            <p className="mb-2">Address: 123 NGO Street, City</p>
-                            <p>Email: info@example.com</p>
+                            <p className="mb-2">Contact: +91 8899037321</p>
+                            <p className="mb-2">Address: Uri, Kashmir</p>
+                            <p>Email: abshartrust2021@gmail.com</p>
                             <div className="flex gap-4 mt-2 lg:mt-0">
-                                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><FiFacebook style={{ fontSize: '24px' }} /></a>
-                                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><FiInstagram style={{ fontSize: '24px' }} /></a>
-                                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"><FiTwitter style={{ fontSize: '24px' }} /></a>
-                                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><FiLinkedin style={{ fontSize: '24px' }} /></a>
+                                <a href="https://www.facebook.com/abshar_trust" target="_blank" rel="noopener noreferrer"><FiFacebook style={{ fontSize: '24px' }} /></a>
+                                <a href="https://www.instagram.com/abshar_trust" target="_blank" rel="noopener noreferrer"><FiInstagram style={{ fontSize: '24px' }} /></a>
+                                <a href="https://twitter.com/abshartrust?lang=en" target="_blank" rel="noopener noreferrer"><FiTwitter style={{ fontSize: '24px' }} /></a>
+                                <a href="https://www.linkedin.com/company/aabshar-source-of-humanity/" target="_blank" rel="noopener noreferrer"><FiLinkedin style={{ fontSize: '24px' }} /></a>
                                 <a href="https://www.github.com" target="_blank" rel="noopener noreferrer"><FiGithub style={{ fontSize: '24px' }} /></a>
                             </div>
                         </div>
