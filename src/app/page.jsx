@@ -37,23 +37,23 @@ const HomePage = () => {
                 </section>
                 <section className='body_color_dark py-12 relative'>
                     <div className='container mx-auto'>
-                        <h2 className='text-3xl font-bold mb-4 text-center'>Our Mission</h2>
+                        <h2 className='text-3xl font-bold mb-8 text-center'>Our Mission</h2>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-                            <div className='border p-6 rounded-md relative hover:scale-card transition-transform duration-300'>
+                            <div className='border p-6 rounded-md relative overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg'>
                                 {/* Gradient color on top of the card */}
                                 <div className='absolute inset-0 rounded-t-md bg-gradient-to-b from-transparent to-body_color_dark opacity-90'></div>
                                 <h3 className='text-xl font-semibold mb-4'>What We Do</h3>
-                                <p>
+                                <p className='mb-4'>
                                     We focus on providing education, healthcare, and support to underprivileged communities. Our aim is to create sustainable solutions to societal issues.
                                 </p>
                                 {/* See Pics button */}
-                                <button className='bg-gradient-to-r from-[#your_color] to-[#your_color] text-white py-2 px-4 mt-4 rounded-md shadow-md hover:shadow-lg'>
+                                <button className='bg-[#your_color] text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg'>
                                     See Pics
                                 </button>
                             </div>
-                            <div className='border p-6 rounded-md shadow-lg hover:scale-card transition-transform duration-300'>
+                            <div className='border p-6 rounded-md shadow-lg hover:scale-105 hover:shadow-xl transition-transform'>
                                 <h3 className='text-xl font-semibold mb-4'>How You Can Help</h3>
-                                <p>
+                                <p className='mb-4'>
                                     Your contributions and support enable us to continue our mission. Explore various ways to get involved, donate, or volunteer.
                                 </p>
                             </div>
