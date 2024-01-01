@@ -39,7 +39,7 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className='flex p-7 text-black  justify-around flex-col  text-center sm:flex-row gap-4 md:gap-12 box_shadow nav_bg'>
+        <nav className='flex p-7 text-black  justify-around flex-col  text-center sm:flex-row gap-4 md:gap-12 box_shadow body_color'>
             <div className='flex justify-between items-center'>
                 <h2 className='text-[1.4rem] sm:text-[0.9rem] md:text-[1rem] lg:text-[1.4rem]'>
                     <Link href={'/ '}>

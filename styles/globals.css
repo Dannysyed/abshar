@@ -62,6 +62,16 @@ h3 {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
+.body_color {
+    background-color: #ece7e3;
+    color: rgb(29, 28, 28);
+}
+
+.body_color_dark {
+    background-color: #b1aca8;
+    color: rgb(29, 28, 28);
+}
+
 .text_primary_color {
     /* font-size: 72px; */
     background: -webkit-linear-gradient(#036b2d, #a77a58);

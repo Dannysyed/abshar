@@ -4,11 +4,11 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { FiMousePointer, FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 const HomePage = () => {
     return (
-        <div className='bg-gray-900 text-white'>
+        <div className='body_color'>
             <div className='mb-20'>
                 <Swiper />
             </div>
-            <div className='bg-gray-900 text-white'>
+            <div className='body_color'>
                 <section className='container mx-auto py-12'>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
                         <div className='text-center md:text-left'>
@@ -29,7 +29,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='bg-gray-800 py-12'>
+                <section className='body_color_dark py-12'>
                     <div className='container mx-auto'>
                         <h2 className='text-3xl font-bold mb-4 text-center'>Our Mission</h2>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
@@ -48,7 +48,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='bg-gray-800 py-12'>
+                <section className='body_color py-12'>
                     <div className='container mx-auto text-center'>
                         <h2 className='text-3xl font-bold mb-4'>Our Impact</h2>
                         <p className='text-lg mb-8'>
@@ -76,7 +76,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='container mx-auto py-12'>
+                <section className='body_color_dark  mx-auto py-12'>
                     <h2 className='text-3xl font-bold mb-4 text-center'>Upcoming Events</h2>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                         {/* Example event cards */}
@@ -100,7 +100,7 @@ const HomePage = () => {
                         </button>
                     </div>
                 </section>
-                <footer className="bg-gray-800 text-white py-6 rounded-3xl">
+                <footer className="body_color py-6 rounded-fullxl">
                     <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center">
                         {/* Left side: Contact, Address, Mail, Socials */}
                         <div className="mb-4 lg:mb-0 lg:pr-8">
