@@ -4,8 +4,11 @@ import Swiper from '../../components/swiper';
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { FiMousePointer, FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import Lottie from "lottie-react";
+import absharlogo from '../../public/images/AbhsarLogo.png'
+
 
 import codingAni from '../../public/images/Animation - 1704125449837.json'
+import Image from 'next/image';
 const HomePage = () => {
     return (
         <div className='body_color'>
@@ -104,7 +107,7 @@ const HomePage = () => {
                     </div>
                 </section>
                 <footer className="body_color py-6 rounded-fullxl">
-                    <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center">
+                    <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center ">
                         {/* Left side: Contact, Address, Mail, Socials */}
                         <div className="mb-4 lg:mb-0 lg:pr-8">
                             <p className="mb-2">Contact: +123456789</p>
@@ -121,7 +124,7 @@ const HomePage = () => {
                         {/* Center: Logo */}
                         <div className="text-center lg:text-left mb-4 lg:mb-0">
                             {/* Your NGO logo */}
-                            <img src="/images/ngo-logo.png" alt="NGO Logo" className="w-16 h-16 mx-auto lg:mx-0" />
+                            <Image src={absharlogo} alt="NGO Logo" className="w-200 h-200 mx-auto lg:mx-0" />
                         </div>
                         {/* Right side: Sign up for Newsletter */}
                         <div className="text-center lg:text-right">
