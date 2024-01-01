@@ -5,7 +5,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { FiMousePointer, FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
 import Lottie from "lottie-react";
 import absharlogo from '../../public/images/AbhsarLogo.png'
-
+import heart from '../../public/images/Animation - 1704131701382.json'
 
 import codingAni from '../../public/images/Animation - 1704125449837.json'
 import Image from 'next/image';
@@ -56,6 +56,9 @@ const HomePage = () => {
                                 <p className='mb-4'>
                                     Your contributions and support enable us to continue our mission. Explore various ways to get involved, donate, or volunteer.
                                 </p>
+                                <div className='basis-2/5 ' >
+                                    <Lottie animationData={heart} loop={true} className='h-[50vh] sm:h-[20vh]' />
+                                </div>
                             </div>
                         </div>
                     </div>
