@@ -21,12 +21,13 @@ const HomePage = () => {
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
                         <div className='text-center md:text-left'>
                             <h1 className='text-4xl font-bold mb-4'>Welcome to Abshar</h1>
+                            <p className='text-lg mb-6 cursive'>
+                                Echoes of Harmony, Fostering a Global Family.
+                            </p>
                             <p className='text-lg mb-6'>
                                 Our NGO is dedicated to making a positive impact on the community. Through various initiatives and programs, we strive to bring about positive changes in people's lives.
                             </p>
-                            <p className='text-lg mb-6'>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat varius sem, vel sodales velit eleifend id.
-                            </p>
+
                             <button className='bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300'>
                                 Get Involved
                             </button>
