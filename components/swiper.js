@@ -17,24 +17,24 @@ const items = [
     {
         src: football,
         altText: 'Slide 1',
-        caption: 'Welcome to Our NGO',
+        caption: 'FootBall Event',
         description: 'Empowering Communities, Changing Lives.',
         key: 1,
     },
-    // {
-    //     src: Socks,
-    //     altText: 'Slide 2',
-    //     caption: 'Supporting Those in Need',
-    //     description: 'Providing Education, Health, and Essential Support.',
-    //     key: 2,
-    // },
-    // {
-    //     src: Football2,
-    //     altText: 'Slide 3',
-    //     caption: 'Join Us in Making a Difference',
-    //     description: 'Volunteer, Donate, and Be Part of the Change.',
-    //     key: 3,
-    // },
+    {
+        src: Socks,
+        altText: 'Slide 2',
+        caption: 'Supporting Those in Need',
+        description: 'Providing Education, Health, and Essential Support.',
+        key: 2,
+    },
+    {
+        src: Football2,
+        altText: 'Slide 3',
+        caption: 'Plantation',
+        description: 'Volunteer, Donate, and Be Part of the Change.',
+        key: 3,
+    },
 ];
 
 function Swiper() {
