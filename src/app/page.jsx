@@ -6,13 +6,14 @@ import { FiMousePointer, FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedi
 import Lottie from "lottie-react";
 import absharlogo from '../../public/images/AbhsarLogo.png'
 import heart from '../../public/images/Animation - 1704131701382.json'
-
+import school from '../../public/images/school.jpg'
+import classroom from '../../public/images/classroom.jpg'
 import codingAni from '../../public/images/Animation - 1704125449837.json'
 import Image from 'next/image';
 const HomePage = () => {
     return (
         <div className='body_color'>
-            <div className='mb-20'>
+            <div >
                 <Swiper />
             </div>
             <div className='body_color'>
@@ -35,10 +36,11 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='body_color_dark py-12 relative'>
+                <section className='bg-gray-800 text-white py-12'>
                     <div className='container mx-auto'>
                         <h2 className='text-3xl font-bold mb-8 text-center'>Our Mission</h2>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+                            {/* Left Side */}
                             <div className='border p-6 rounded-md relative overflow-hidden transition-transform transform hover:scale-105 hover:shadow-lg'>
                                 {/* Gradient color on top of the card */}
                                 <div className='absolute inset-0 rounded-t-md bg-gradient-to-b from-transparent to-body_color_dark opacity-90'></div>
@@ -47,15 +49,17 @@ const HomePage = () => {
                                     We focus on providing education, healthcare, and support to underprivileged communities. Our aim is to create sustainable solutions to societal issues.
                                 </p>
                                 {/* See Pics button */}
-                                <button className='bg-[#your_color] text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg'>
-                                    See Pics
+                                <button className='bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg'>
+                                    Check out Page
                                 </button>
                             </div>
+                            {/* Right Side */}
                             <div className='border p-6 rounded-md shadow-lg hover:scale-105 hover:shadow-xl transition-transform'>
                                 <h3 className='text-xl font-semibold mb-4'>How You Can Help</h3>
                                 <p className='mb-4'>
                                     Your contributions and support enable us to continue our mission. Explore various ways to get involved, donate, or volunteer.
                                 </p>
+                                {/* Lottie Animation */}
                                 <div className='basis-2/5 ' >
                                     <Lottie animationData={heart} loop={true} className='h-[22vh] sm:h-[20vh]' />
                                 </div>
@@ -63,6 +67,7 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
+
 
 
                 <section className='body_color py-12'>
@@ -93,30 +98,42 @@ const HomePage = () => {
                         </div>
                     </div>
                 </section>
-                <section className='body_color_dark  mx-auto py-12'>
-                    <h2 className='text-3xl font-bold mb-4 text-center'>Upcoming Events</h2>
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-                        {/* Example event cards */}
-                        <div className='border p-6 rounded-md'>
-                            <h3 className='text-xl font-semibold mb-4'>Event Title 1</h3>
-                            <p>
-                                Description or details about the upcoming event. Date, time, location, and how to participate.
-                            </p>
+                <section className='body_color_dark py-12'>
+                    <div className='container mx-auto px-4'>
+                        <h2 className='text-3xl font-bold mb-8 text-center'>Upcoming Events</h2>
+                        <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+                            {/* Event Card 1 */}
+                            <div className='rounded-lg overflow-hidden bg-white shadow-md'>
+                                <Image src={classroom} alt='Event 1' className='w-full h-40 object-cover' />
+                                <div className='p-6'>
+                                    <h3 className='text-xl font-semibold mb-4 text-gray-600'>School Event</h3>
+                                    <p className='mb-4 text-gray-600'>
+                                        Description or details about the upcoming event. Date, time, location, and how to participate.
+                                    </p>
+                                    <a href='#' className='block text-blue-600 hover:underline'>Read More</a>
+                                </div>
+                            </div>
+                            {/* Event Card 2 */}
+                            <div className='rounded-lg overflow-hidden bg-white shadow-md'>
+                                <Image src={school} alt='Event 2' className='w-full h-40 object-cover' />
+                                <div className='p-6'>
+                                    <h3 className='text-xl font-semibold mb-4 text-gray-600'>Classroom Event</h3>
+                                    <p className='mb-4 text-gray-600'>
+                                        Description or details about the upcoming event. Date, time, location, and how to participate.
+                                    </p>
+                                    <a href='#' className='block text-blue-600 hover:underline'>Read More</a>
+                                </div>
+                            </div>
+                            {/* Add more event cards as needed */}
                         </div>
-                        <div className='border p-6 rounded-md'>
-                            <h3 className='text-xl font-semibold mb-4'>Event Title 2</h3>
-                            <p>
-                                Description or details about the upcoming event. Date, time, location, and how to participate.
-                            </p>
+                        <div className='flex justify-center mt-8'>
+                            <a href='#' className='bg-green-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300'>
+                                View All Events
+                            </a>
                         </div>
-                        {/* Add more event cards as needed */}
-                    </div>
-                    <div className='flex justify-center mt-8'>
-                        <button className='bg-green-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300'>
-                            View All Events
-                        </button>
                     </div>
                 </section>
+
                 <footer className="body_color py-6 rounded-fullxl">
                     <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center ">
                         {/* Left side: Contact, Address, Mail, Socials */}

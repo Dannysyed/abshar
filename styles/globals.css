@@ -68,8 +68,9 @@ h3 {
 }
 
 .body_color_dark {
-    background-color: #d3bfae;
-    color: rgb(29, 28, 28);
+    /* background-color: #f9eadb; */
+    background-color: #1f2937;
+    color: rgb(255, 253, 253);
 }
 
 .text_primary_color {
@@ -78,6 +79,8 @@ h3 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+
 
 .text_primary {
     font-size: 40px;
@@ -93,4 +96,10 @@ h3 {
 
 .head_text {
     @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+}
+
+@media (max-width: 768px) {
+    div .d-none {
+        display: block !important;
+    }
 }

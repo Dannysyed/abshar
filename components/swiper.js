@@ -21,20 +21,20 @@ const items = [
         description: 'Empowering Communities, Changing Lives.',
         key: 1,
     },
-    {
-        src: Socks,
-        altText: 'Slide 2',
-        caption: 'Supporting Those in Need',
-        description: 'Providing Education, Health, and Essential Support.',
-        key: 2,
-    },
-    {
-        src: Football2,
-        altText: 'Slide 3',
-        caption: 'Join Us in Making a Difference',
-        description: 'Volunteer, Donate, and Be Part of the Change.',
-        key: 3,
-    },
+    // {
+    //     src: Socks,
+    //     altText: 'Slide 2',
+    //     caption: 'Supporting Those in Need',
+    //     description: 'Providing Education, Health, and Essential Support.',
+    //     key: 2,
+    // },
+    // {
+    //     src: Football2,
+    //     altText: 'Slide 3',
+    //     caption: 'Join Us in Making a Difference',
+    //     description: 'Volunteer, Donate, and Be Part of the Change.',
+    //     key: 3,
+    // },
 ];
 
 function Swiper() {
@@ -66,20 +66,22 @@ function Swiper() {
                 key={item.src}
                 className="position-relative"
             >
-                <div className="w-full md:w-3/4 mx-auto">
+                <div className="w-full h-[50vh] md:h-[70vh] mx-auto">
                     <Image
                         src={item.src}
                         alt={item.altText}
-                        className="w-full h-auto"
+                        className="w-full h-full object-cover"
                         objectFit="cover"
                         objectPosition="center"
+                    // layout="responsive"
                     />
                 </div>
                 <div className="position-absolute w-full h-full bg-black opacity-50 top-0"></div>
                 <CarouselCaption
                     captionText={item.description}
                     captionHeader={item.caption}
-                    className="position-absolute w-full text-white"
+                    className=" text-white d-sm-block"
+
                 />
             </CarouselItem>
         );
