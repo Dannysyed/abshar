@@ -48,9 +48,9 @@ const Navbar = () => {
                 </h2>
                 {/* Mobile Navigation */}
                 {!isBread ?
-                    <Bars3Icon className="h-4 w-4 mx-2  sm:hidden" onClick={() => { setIsBread(prev => !prev) }} />
+                    <Bars3Icon className="h-8 w-6 mx-2  sm:hidden" onClick={() => { setIsBread(prev => !prev) }} />
                     :
-                    <XMarkIcon className="h-4 w-4 mx-2 sm:hidden" onClick={() => { setIsBread(prev => !prev) }} />
+                    <XMarkIcon className="h-6 w-6 mx-2 sm:hidden" onClick={() => { setIsBread(prev => !prev) }} />
                 }
             </div>
             {/* Desktop Navbar */}
