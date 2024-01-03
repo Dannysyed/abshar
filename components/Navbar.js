@@ -120,7 +120,7 @@ const Navbar = () => {
           `}
                 >
                     <FiHeart />
-                    <span>Donate Now</span>
+                    <span className='font-bold'>Donate Now</span>
                 </button>
             </div>
             <DonateModal isOpen={isModalOpen} handleClose={handleCloseModal} />
