@@ -10,6 +10,10 @@ import school from '../../public/images/school.jpg'
 import classroom from '../../public/images/classroom.jpg'
 import codingAni from '../../public/images/Animation - 1704125449837.json'
 import Image from 'next/image';
+
+import EducationIcon from '../../public/icons/education.png';
+import HealthcareIcon from '../../public/icons/healthcare.png';
+import CommunityIcon from '../../public/icons/partners.png';
 const HomePage = () => {
     return (
         <div className='body_color'>
@@ -71,34 +75,45 @@ const HomePage = () => {
 
 
 
-                <section className='body_color py-12'>
+
+                <section className='bg-gray-100 py-12'>
                     <div className='container mx-auto text-center'>
-                        <h2 className='text-3xl font-bold mb-4'>Our Impact</h2>
-                        <p className='text-lg mb-8'>
+                        <h2 className='text-3xl font-bold mb-6'>Our Impact</h2>
+                        <p className='text-lg mb-10'>
                             We're proud of the positive changes we've brought about in people's lives. Here are some highlights of our impactful work.
                         </p>
                         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-                            <div className='border p-6 rounded-md'>
+                            <div className='border p-6 rounded-md shadow-md bg-white flex flex-col items-center'>
+                                <Image src={EducationIcon} className='w-20 h-20 mb-4' />
                                 <h3 className='text-xl font-semibold mb-4'>Education Initiatives</h3>
-                                <p>
-                                    Number of students enrolled, educational programs conducted, or success stories of students.
+                                <p className='text-base'>
+                                    Our educational programs have impacted
+                                    <span className='text-green-500 font-bold'> 5000+ students</span>,
+                                    providing them with access to quality education and transforming their lives.
                                 </p>
                             </div>
-                            <div className='border p-6 rounded-md'>
+                            <div className='border p-6 rounded-md shadow-md bg-white flex flex-col items-center'>
+                                <Image src={HealthcareIcon} className='w-20 h-20 mb-4' />
                                 <h3 className='text-xl font-semibold mb-4'>Healthcare Support</h3>
-                                <p>
-                                    Health campaigns held, medical services provided, or testimonials from beneficiaries.
+                                <p className='text-base'>
+                                    Through health campaigns and medical services, we've reached
+                                    <span className='text-green-500 font-bold'> 10,000+ people</span> in need,
+                                    providing essential healthcare services and promoting a healthier community.
                                 </p>
                             </div>
-                            <div className='border p-6 rounded-md'>
+                            <div className='border p-6 rounded-md shadow-md bg-white flex flex-col items-center'>
+                                <Image src={CommunityIcon} className='w-20 h-20 mb-4' />
                                 <h3 className='text-xl font-semibold mb-4'>Community Development</h3>
-                                <p>
-                                    Community projects completed, infrastructure developed, or community testimonials.
+                                <p className='text-base'>
+                                    Our community development initiatives have led to the completion of
+                                    <span className='text-green-500 font-bold'> 20+ projects</span>,
+                                    enhancing infrastructures and creating a positive impact on local communities.
                                 </p>
                             </div>
                         </div>
                     </div>
                 </section>
+
                 <section className='body_color_dark py-12'>
                     <div className='container mx-auto px-4'>
                         <h2 className='text-3xl font-bold mb-8 text-center'>Upcoming Events</h2>
