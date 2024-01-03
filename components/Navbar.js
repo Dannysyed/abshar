@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import Image from 'next/image';
 import absharlogo from '../public/images/AbhsarLogo.png';
-import { FiActivity } from 'react-icons/fi';
+import { FiHeart } from 'react-icons/fi';
 import Link from 'next/link'
 import DonateModal from './DonateModal';
 const Navbar = () => {
@@ -119,7 +119,7 @@ const Navbar = () => {
             hover:text-green-800
           `}
                 >
-                    <FiActivity />
+                    <FiHeart />
                     <span>Donate Now</span>
                 </button>
             </div>
