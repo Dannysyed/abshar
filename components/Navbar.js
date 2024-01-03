@@ -5,13 +5,21 @@ import Image from 'next/image';
 import absharlogo from '../public/images/AbhsarLogo.png';
 import { FiActivity } from 'react-icons/fi';
 import Link from 'next/link'
+import DonateModal from './DonateModal';
 const Navbar = () => {
     const [isMobile, setIsMobile] = useState(false);
     const [isBread, setIsBread] = useState(false);
     const [prevScrollPos, setPrevScrollPos] = useState(0);
     const [visible, setVisible] = useState(true);
+    const [isModalOpen, setIsModalOpen] = useState(false);
     const navRef = useRef();
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+    };
 
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    }
     const menuItems = [
         {
             href: '/',
@@ -100,7 +108,7 @@ const Navbar = () => {
             )}
             {/* Donate Now Button */}
             <div className='flex justify-center sm:block'>
-                <button
+                <button onClick={handleOpenModal}
                     className={`
             px-4 py-2 rounded-full 
             flex items-center gap-2 
@@ -115,6 +123,7 @@ const Navbar = () => {
                     <span>Donate Now</span>
                 </button>
             </div>
+            <DonateModal isOpen={isModalOpen} handleClose={handleCloseModal} />
         </nav>
     );
 };
