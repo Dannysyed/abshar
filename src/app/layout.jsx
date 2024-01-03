@@ -1,5 +1,7 @@
 import Navbar from '../../components/Navbar'
 import '../../styles/globals.css'
+import Head from 'next/head';
+import icon from '../../public/favicon.ico'
 export const metadata = {
     title: 'Abshar',
     description: 'Welcome to Abshar'
@@ -7,6 +9,9 @@ export const metadata = {
 const RootLayout = ({ children }) => {
     return (
         <html lang='en'>
+            <Head>
+                <link rel="icon" href='../../public/favicon.ico' />
+            </Head>
             <body>
                 <div className='main'>
                     <div className='gradient' />
