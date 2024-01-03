@@ -15,11 +15,11 @@ const Navbar = () => {
     const menuItems = [
         {
             href: '/',
-            title: 'Membership',
+            title: 'HomePage',
         },
         {
-            href: '/gallery',
-            title: 'Gallery',
+            href: '/events',
+            title: 'Events',
         },
         {
             href: '/about',
@@ -48,7 +48,7 @@ const Navbar = () => {
     return (
         <nav
             ref={navRef}
-            className={`flex p-7 text-black justify-between items-center flex-col sm:flex-row gap-4 md:gap-12 box_shadow body_color ${visible ? 'sticky top-0 z-50 transition-all duration-300' : '-top-24'
+            className={`flex p-4 text-black justify-between items-center flex-col sm:flex-row gap-4 md:gap-12 box_shadow body_color ${visible ? 'sticky top-0 z-50 transition-all duration-300' : '-top-24'
                 }`}
         >
             <div className='flex justify-between w-full sm:w-auto items-center'>
@@ -71,27 +71,31 @@ const Navbar = () => {
                 )}
             </div>
             {/* Desktop Navbar */}
-            <ul className='hidden sm:flex gap-5 flex-col items-center sm:flex-row sm:gap-4 md:gap-4 lg:gap-12'>
+            <div className="hidden sm:flex gap-5 flex-col items-center sm:flex-row sm:gap-4 md:gap-4 lg:gap-1  ">
                 {menuItems.map(({ href, title }) => (
-                    <li key={title}>
-                        <Link href={href} className='text-black hover:text-slate-200 font-bold hover:cursor-pointer decoration-transparent'>
+                    <span key={title} className="group relative">
+                        <Link href={href} className="text-black font-bold decoration-transparent relative">
                             {title}
+                            <span className="absolute -bottom-0 left-0 w-full h-1 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left text-2xl"></span>
                         </Link>
-                    </li>
+                    </span>
                 ))}
-            </ul>
+            </div>
+
             {/* Mobile Crumbread */}
             {isBread && (
                 <div className='sm:hidden'>
-                    <ul className='flex gap-5 flex-col items-center sm:flex-row'>
+                    <div className="flex gap-5 flex-col items-center sm:flex-row">
                         {menuItems.map(({ href, title }) => (
-                            <li key={title}>
-                                <Link href={href} className='text-black hover:text-white decoration-transparent'>
+                            <span key={title} className="group relative">
+                                <Link href={href} className="text-black decoration-transparent relative">
                                     {title}
+                                    <span className="absolute -bottom-0 left-0 w-full h-1 bg-green-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></span>
                                 </Link>
-                            </li>
+                            </span>
                         ))}
-                    </ul>
+                    </div>
+
                 </div>
             )}
             {/* Donate Now Button */}
