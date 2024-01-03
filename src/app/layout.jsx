@@ -4,7 +4,7 @@ import Head from 'next/head';
 import icon from '../../public/favicon.ico'
 export const metadata = {
     title: 'Abshar',
-    description: 'Welcome to Abshar'
+    description: 'Version 1.0.1'
 }
 const RootLayout = ({ children }) => {
     return (

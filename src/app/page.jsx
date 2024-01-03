@@ -187,7 +187,7 @@ const HomePage = () => {
                         </div>
                     </div>
                     {/* Bottom: Copyright */}
-                    <p className="text-center text-xs mt-4">&copy; 2023 Your NGO. All Rights Reserved.</p>
+                    <p className="text-center text-xs mt-4">&copy; 2023 Abshar. All Rights Reserved.</p>
                 </footer>
             </div>
         </div>
