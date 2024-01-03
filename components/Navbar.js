@@ -48,7 +48,7 @@ const Navbar = () => {
     return (
         <nav
             ref={navRef}
-            className={`flex p-7 text-black justify-between items-center flex-col sm:flex-row z-50 gap-4 md:gap-12 box_shadow body_color ${visible ? 'sticky top-0' : '-top-24'
+            className={`flex p-7 text-black justify-between items-center flex-col sm:flex-row gap-4 md:gap-12 box_shadow body_color ${visible ? 'sticky top-0 z-50 transition-all duration-300' : '-top-24'
                 }`}
         >
             <div className='flex justify-between w-full sm:w-auto items-center'>
