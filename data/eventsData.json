@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "title": "Event 1",
+        "date": "2023-12-15",
+        "location": "City A"
+    },
+    {
+        "id": 2,
+        "title": "Event 2",
+        "date": "2023-12-20",
+        "location": "City B"
+    }
+]

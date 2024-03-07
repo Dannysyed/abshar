@@ -1,0 +1,94 @@
+// components/NewEventForm.js
+import React, { useState } from 'react';
+
+const NewEventForm = ({ onSubmit }) => {
+    const [formData, setFormData] = useState({
+        title: '',
+        date: '',
+        location: '',
+        image: null
+    });
+
+    const handleChange = (e) => {
+        const { name, value, files } = e.target;
+        setFormData({ ...formData, [name]: files ? files[0] : value });
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const eventData = new FormData();
+        eventData.append('title', formData.title);
+        eventData.append('date', formData.date);
+        eventData.append('location', formData.location);
+        if (formData.image) {
+            eventData.append('image', formData.image);
+        }
+
+        onSubmit(eventData);
+        // Reset form
+        setFormData({
+            title: '',
+            date: '',
+            location: '',
+            image: null
+        });
+    };
+
+    return (
+        <form onSubmit={handleSubmit} className="container mx-auto py-12">
+            <h2 className="text-3xl font-bold mb-6">Create New Event</h2>
+            <div className="mb-4">
+                <label htmlFor="title" className="block mb-2">Title</label>
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleChange}
+                    className="border p-2 rounded w-full"
+                    required
+                />
+            </div>
+            <div className="mb-4">
+                <label htmlFor="date" className="block mb-2">Date</label>
+                <input
+                    type="date"
+                    id="date"
+                    name="date"
+                    value={formData.date}
+                    onChange={handleChange}
+                    className="border p-2 rounded w-full"
+                    required
+                />
+            </div>
+            <div className="mb-4">
+                <label htmlFor="location" className="block mb-2">Location</label>
+                <input
+                    type="text"
+                    id="location"
+                    name="location"
+                    value={formData.location}
+                    onChange={handleChange}
+                    className="border p-2 rounded w-full"
+                    required
+                />
+            </div>
+            <div className="mb-4">
+                <label htmlFor="image" className="block mb-2">Event Image</label>
+                <input
+                    type="file"
+                    id="image"
+                    name="image"
+                    onChange={handleChange}
+                    className="border p-2 rounded w-full"
+                    accept="image/*"
+                />
+            </div>
+            <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Create Event
+            </button>
+        </form>
+    );
+};
+
+export default NewEventForm;

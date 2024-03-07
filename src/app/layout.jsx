@@ -2,6 +2,7 @@ import Navbar from '../../components/Navbar'
 import '../../styles/globals.css'
 import Head from 'next/head';
 import icon from '../../public/favicon.ico'
+import Footer from '../../components/Footer';
 export const metadata = {
     title: 'Abshar',
     description: 'Version 1.0.1'
@@ -16,10 +17,9 @@ const RootLayout = ({ children }) => {
                 <div className='main'>
                     <div className='gradient' />
                 </div>
-                {/* <main className='app'> */}
                 <Navbar />
                 {children}
-                {/* </main> */}
+                <Footer />
             </body>
         </html>
     )

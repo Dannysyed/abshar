@@ -33,10 +33,7 @@ const Navbar = () => {
             href: '/about',
             title: 'About Us',
         },
-        {
-            href: '/contact',
-            title: 'Contact Us',
-        },
+
     ];
 
     const handleScroll = () => {
