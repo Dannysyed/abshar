@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.2",
+    "date-fns": "^3.3.1",
     "framer-motion": "^10.16.16",
     "keen-slider": "^6.8.6",
     "lottie-react": "^2.4.0",
