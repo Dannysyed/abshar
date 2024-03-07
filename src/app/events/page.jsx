@@ -53,7 +53,7 @@ const EventsPage = () => {
 
         // Simulate checking if the user is an admin
         // In a real application, you would check the user's role from your authentication system
-        setIsAdmin(true); // Set to true if the user is an admin
+        setIsAdmin(false); // Set to true if the user is an admin
     }, []);
 
     const handleCreateEvent = (newEventData) => {

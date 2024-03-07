@@ -5,6 +5,7 @@ const NewEventForm = ({ onSubmit }) => {
     const [formData, setFormData] = useState({
         title: '',
         date: '',
+        description: '',
         location: '',
         image: null
     });
@@ -19,6 +20,7 @@ const NewEventForm = ({ onSubmit }) => {
         const eventData = new FormData();
         eventData.append('title', formData.title);
         eventData.append('date', formData.date);
+        eventData.append('description', formData.description);
         eventData.append('location', formData.location);
         if (formData.image) {
             eventData.append('image', formData.image);
@@ -29,6 +31,7 @@ const NewEventForm = ({ onSubmit }) => {
         setFormData({
             title: '',
             date: '',
+            description: '',
             location: '',
             image: null
         });
@@ -68,6 +71,18 @@ const NewEventForm = ({ onSubmit }) => {
                     id="location"
                     name="location"
                     value={formData.location}
+                    onChange={handleChange}
+                    className="border p-2 rounded w-full"
+                    required
+                />
+            </div>
+            <div className="mb-4">
+                <label htmlFor="location" className="block mb-2">description</label>
+                <input
+                    type="text"
+                    id="description"
+                    name="description"
+                    value={formData.description}
                     onChange={handleChange}
                     className="border p-2 rounded w-full"
                     required
