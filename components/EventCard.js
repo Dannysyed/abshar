@@ -1,4 +1,3 @@
-// components/EventCard.js
 import Link from 'next/link';
 import React from 'react';
 import { format, isPast } from 'date-fns';
@@ -16,15 +15,14 @@ const EventCard = ({ event }) => {
             className={`border p-6 rounded-md shadow-lg transition-transform ${isEventPast ? 'bg-gray-200' : 'bg-white'
                 } hover:scale-105 hover:shadow-xl`}
         >
-            {event.image && (
+            {event.imageUrl && (
                 <Image
-                    src={event.image}
-                    alt={event.title}
+                    src={event.imageUrl}
+                    // alt={event.title}
                     width={100}
                     height={100}
                     className="w-full h-48 object-cover rounded-md mb-4"
                 />
-
             )}
             <h3 className="text-xl font-semibold mb-4">{event.title}</h3>
             <p>Date: {formattedDate}</p>
@@ -35,12 +33,12 @@ const EventCard = ({ event }) => {
                 </span>
             )}
             <div className="mt-4 flex justify-between items-center">
-                <Link href={`/events/${event.id}`}>
+                <Link href={`/events/${event._id}`}>
                     <p className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         Learn More
                     </p>
                 </Link>
-                <Link href={`/events/${event.id}`}>
+                <Link href={`/events/${event._id}`}>
                     <p className="text-blue-500 hover:underline">View Details</p>
                 </Link>
             </div>

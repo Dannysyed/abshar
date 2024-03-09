@@ -1,5 +1,5 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Swiper from '../../components/swiper';
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
@@ -15,6 +15,28 @@ import EducationIcon from '../../public/icons/education.png';
 import HealthcareIcon from '../../public/icons/healthcare.png';
 import CommunityIcon from '../../public/icons/partners.png';
 const HomePage = () => {
+    const [pastEvents, setPastEvents] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchPastEvents = async () => {
+            try {
+                const response = await fetch('https://abshar-backend.onrender.com/events');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch past events');
+                }
+                const data = await response.json();
+                setPastEvents(data.slice(0, 2)); // Display only the first two events
+                setLoading(false);
+            } catch (error) {
+                setError('Failed to fetch past events');
+                setLoading(false);
+            }
+        };
+
+        fetchPastEvents();
+    }, []);
     return (
         <div className='body_color'>
             <div >
@@ -118,32 +140,25 @@ const HomePage = () => {
                     <div className='container mx-auto px-4'>
                         <h2 className='text-3xl font-bold mb-8 text-center'>Past Events</h2>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-                            {/* Event Card 1 */}
-                            <div className='rounded-lg overflow-hidden bg-white shadow-md'>
-                                <Image src={classroom} alt='Event 1' className='w-full h-40 object-cover' />
-                                <div className='p-6'>
-                                    <h3 className='text-xl font-semibold mb-4 text-gray-600'>School Event</h3>
-                                    <p className='mb-4 text-gray-600'>
-                                        Description or details about the upcoming event. Date, time, location, and how to participate.
-                                    </p>
-                                    <a href='#' className='block text-blue-600 hover:underline'>Read More</a>
-                                </div>
-                            </div>
-                            {/* Event Card 2 */}
-                            <div className='rounded-lg overflow-hidden bg-white shadow-md'>
-                                <Image src={school} alt='Event 2' className='w-full h-40 object-cover' />
-                                <div className='p-6'>
-                                    <h3 className='text-xl font-semibold mb-4 text-gray-600'>Classroom Event</h3>
-                                    <p className='mb-4 text-gray-600'>
-                                        Description or details about the upcoming event. Date, time, location, and how to participate.
-                                    </p>
-                                    <a href='#' className='block text-blue-600 hover:underline'>Read More</a>
-                                </div>
-                            </div>
-                            {/* Add more event cards as needed */}
+                            {loading ? (
+                                <p>Loading...</p>
+                            ) : error ? (
+                                <p>Error: {error}</p>
+                            ) : (
+                                pastEvents.map(event => (
+                                    <div key={event._id} className='rounded-lg overflow-hidden bg-white shadow-md'>
+                                        <Image src={event.imageUrl} alt={event.title} className='w-full h-40 object-cover' height={100} width={100} />
+                                        <div className='p-6'>
+                                            <h3 className='text-xl font-semibold mb-4 text-gray-600'>{event.title}</h3>
+                                            <p className='mb-4 text-gray-600'>{event.description}</p>
+                                            <a href={`events/${event._id}`} className='block text-blue-600 hover:underline'>Read More</a>
+                                        </div>
+                                    </div>
+                                ))
+                            )}
                         </div>
                         <div className='flex justify-center mt-8'>
-                            <a href='#' className='bg-green-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300'>
+                            <a href='/events' className='bg-green-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md transition duration-300'>
                                 View All Events
                             </a>
                         </div>

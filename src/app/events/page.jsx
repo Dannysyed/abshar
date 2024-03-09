@@ -1,4 +1,3 @@
-// pages/events.js
 'use client'
 import React, { useState, useEffect } from 'react';
 import EventCard from '../../../components/EventCard';
@@ -13,47 +12,26 @@ const EventsPage = () => {
     const [isAdmin, setIsAdmin] = useState(false); // Simulate admin check
 
     useEffect(() => {
-        // Simulate fetching data from an API
-        setTimeout(() => {
+        const fetchEvents = async () => {
             try {
-                const allEvents = [
-                    {
-                        id: 1,
-                        title: 'Event 1',
-                        date: '2023-12-15',
-                        location: 'City A',
-                        image: imagess,
-                    },
-                    {
-                        id: 2,
-                        title: 'Event 2',
-                        date: '2023-12-20',
-                        location: 'City B',
-                        image: imagess,
-                    },
-                    {
-                        id: 3,
-                        title: 'Event 3',
-                        date: '2024-01-10',
-                        location: 'City C',
-                        image: imagess,
-                    },
-                ];
-
-                // Filter events to include only past events
-                const pastEvents = allEvents.filter(event => isPast(new Date(event.date)));
-
-                setEventsData(pastEvents);
+                const response = await fetch('https://abshar-backend.onrender.com/events'); // Assuming you have an Express route to fetch events
+                if (!response.ok) {
+                    throw new Error('Failed to fetch events');
+                }
+                const events = await response.json();
+                setEventsData(events);
                 setLoading(false);
             } catch (err) {
-                setError('Failed to load events');
+                setError(err.message || 'Failed to load events');
                 setLoading(false);
             }
-        }, 1000);
+        };
+
+        fetchEvents();
 
         // Simulate checking if the user is an admin
         // In a real application, you would check the user's role from your authentication system
-        setIsAdmin(false); // Set to true if the user is an admin
+        setIsAdmin(true); // Set to true if the user is an admin
     }, []);
 
     const handleCreateEvent = (newEventData) => {
@@ -74,7 +52,7 @@ const EventsPage = () => {
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {eventsData.map((event) => (
-                            <EventCard key={event.id} event={event} />
+                            <EventCard key={event._id} event={event} />
                         ))}
                     </div>
                 )}

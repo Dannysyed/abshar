@@ -1,7 +1,7 @@
 // components/NewEventForm.js
 import React, { useState } from 'react';
 
-const NewEventForm = ({ onSubmit }) => {
+const NewEventForm = () => {
     const [formData, setFormData] = useState({
         title: '',
         date: '',
@@ -15,7 +15,7 @@ const NewEventForm = ({ onSubmit }) => {
         setFormData({ ...formData, [name]: files ? files[0] : value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const eventData = new FormData();
         eventData.append('title', formData.title);
@@ -26,15 +26,21 @@ const NewEventForm = ({ onSubmit }) => {
             eventData.append('image', formData.image);
         }
 
-        onSubmit(eventData);
-        // Reset form
-        setFormData({
-            title: '',
-            date: '',
-            description: '',
-            location: '',
-            image: null
-        });
+        try {
+            const response = await fetch('https://abshar-backend.onrender.com/upload', {
+                method: 'POST',
+                body: eventData,
+            });
+            if (!response.ok) {
+                throw new Error('Failed to upload image');
+            }
+            const data = await response.json();
+            console.log('Event created:', data);
+            // Optionally, you can redirect the user to a different page or show a success message
+        } catch (error) {
+            console.error('Error creating event:', error);
+            // Handle error, show error message, etc.
+        }
     };
 
     return (
@@ -77,9 +83,8 @@ const NewEventForm = ({ onSubmit }) => {
                 />
             </div>
             <div className="mb-4">
-                <label htmlFor="location" className="block mb-2">description</label>
-                <input
-                    type="text"
+                <label htmlFor="description" className="block mb-2">Description</label>
+                <textarea
                     id="description"
                     name="description"
                     value={formData.description}
@@ -97,6 +102,7 @@ const NewEventForm = ({ onSubmit }) => {
                     onChange={handleChange}
                     className="border p-2 rounded w-full"
                     accept="image/*"
+                    required
                 />
             </div>
             <button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
