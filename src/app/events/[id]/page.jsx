@@ -4,11 +4,11 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { Hearts } from 'react-loader-spinner'
 import Image from 'next/image';
+import { format } from 'date-fns';
+import { shareEvent } from '../../../../components/shareEvent';
+// import { shareEvent } from '../utils/shareEvent'; // Assuming you have a utility function for sharing
 
 const EventDetailPage = ({ params }) => {
-    // const router = useRouter();
-    // const { id } = router.query;
-
     const [event, setEvent] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
@@ -34,16 +34,8 @@ const EventDetailPage = ({ params }) => {
         }
     }, [params.id]);
 
-    if (loading) return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
-        <Hearts
-            height="100"
-            width="100"
-            color="#4fa94d"
-            ariaLabel="hearts-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-        />
+    if (loading) return <div className="flex justify-center items-center">
+        <Hearts height="100" width="100" color="#4fa94d" ariaLabel="hearts-loading" />
     </div>;
     if (error) return <p>Error: {error}</p>;
     if (!event) return null;
@@ -77,15 +69,14 @@ const EventDetailPage = ({ params }) => {
             </div>
             <div className="mt-8">
                 <h2 className="text-2xl font-semibold">Share this Event</h2>
-                {/* Placeholder for social sharing buttons */}
                 <div className="mt-2">
-                    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l">
+                    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l" onClick={() => shareEvent(event, 'facebook')}>
                         Facebook
                     </button>
-                    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4">
+                    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4" onClick={() => shareEvent(event, 'twitter')}>
                         Twitter
                     </button>
-                    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r">
+                    <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-r" onClick={() => shareEvent(event, 'linkedin')}>
                         LinkedIn
                     </button>
                 </div>
