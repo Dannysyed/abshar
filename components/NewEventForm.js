@@ -75,7 +75,7 @@ const NewEventForm = ({ isOpen, handleClose }) => {
                     zIndex: 9999,
                 },
                 content: {
-                    top: '80%',
+                    top: '85%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
                     width: '90%',
