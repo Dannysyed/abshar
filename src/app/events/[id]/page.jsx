@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import { Hearts } from 'react-loader-spinner'
 import Image from 'next/image';
 
 const EventDetailPage = ({ params }) => {
@@ -33,7 +34,17 @@ const EventDetailPage = ({ params }) => {
         }
     }, [params.id]);
 
-    if (loading) return <p>Loading...</p>;
+    if (loading) return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
+        <Hearts
+            height="100"
+            width="100"
+            color="#4fa94d"
+            ariaLabel="hearts-loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+            visible={true}
+        />
+    </div>;
     if (error) return <p>Error: {error}</p>;
     if (!event) return null;
 

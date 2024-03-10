@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import Swiper from '../../components/swiper';
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-
+import { Hearts } from 'react-loader-spinner'
 import Lottie from "lottie-react";
 import absharlogo from '../../public/images/AbhsarLogo.png'
 import heart from '../../public/images/Animation - 1704131701382.json'
@@ -141,7 +141,17 @@ const HomePage = () => {
                         <h2 className='text-3xl font-bold mb-8 text-center'>Past Events</h2>
                         <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
                             {loading ? (
-                                <p>Loading...</p>
+                                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }}>
+                                    <Hearts
+                                        height="100"
+                                        width="100"
+                                        color="#4fa94d"
+                                        ariaLabel="hearts-loading"
+                                        wrapperStyle={{}}
+                                        wrapperClass=""
+                                        visible={true}
+                                    />
+                                </div>
                             ) : error ? (
                                 <p>Error: {error}</p>
                             ) : (

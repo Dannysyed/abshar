@@ -1,4 +1,5 @@
 'use client'
+import { Hearts } from 'react-loader-spinner'
 import React, { useState, useEffect } from 'react';
 import EventCard from '../../../components/EventCard';
 import NewEventForm from '../../../components/NewEventForm';
@@ -44,7 +45,17 @@ const EventsPage = () => {
             <div className="container mx-auto py-12">
                 <h1 className="text-3xl font-bold mb-8 text-center">Past Events</h1>
                 {loading ? (
-                    <p>Loading...</p>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                        <Hearts
+                            height="100"
+                            width="100"
+                            color="#4fa94d"
+                            ariaLabel="hearts-loading"
+                            wrapperStyle={{}}
+                            wrapperClass=""
+                            visible={true}
+                        />
+                    </div>
                 ) : error ? (
                     <p className="text-red-500">{error}</p>
                 ) : eventsData.length === 0 ? (
