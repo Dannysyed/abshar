@@ -14,12 +14,14 @@ import Image from 'next/image';
 import EducationIcon from '../../public/icons/education.png';
 import HealthcareIcon from '../../public/icons/healthcare.png';
 import CommunityIcon from '../../public/icons/partners.png';
+import { toast } from 'react-toastify';
 const HomePage = () => {
     const [pastEvents, setPastEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
     useEffect(() => {
+
         const fetchPastEvents = async () => {
             try {
                 const response = await fetch('https://abshar-backend.onrender.com/events');

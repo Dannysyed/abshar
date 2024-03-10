@@ -1,6 +1,7 @@
-// components/NewEventForm.js
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { FaGrinHearts } from 'react-icons/fa';
 import ReactModal from 'react-modal';
+import { toast } from 'react-toastify';
 
 const NewEventForm = ({ isOpen, handleClose }) => {
     const [formData, setFormData] = useState({
@@ -10,6 +11,8 @@ const NewEventForm = ({ isOpen, handleClose }) => {
         location: '',
         image: null
     });
+    const [loading, setLoading] = useState(false);
+    const [toastMessage, setToastMessage] = useState(null);
 
     const handleChange = (e) => {
         const { name, value, files } = e.target;
@@ -18,6 +21,7 @@ const NewEventForm = ({ isOpen, handleClose }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
         const eventData = new FormData();
         eventData.append('title', formData.title);
         eventData.append('date', formData.date);
@@ -28,7 +32,7 @@ const NewEventForm = ({ isOpen, handleClose }) => {
         }
 
         try {
-            const response = await fetch('https://abshar-backend.onrender.com/upload', {
+            const response = await fetch('https://abhshar-backend.onrender.com/upload', {
                 method: 'POST',
                 body: eventData,
             });
@@ -37,12 +41,23 @@ const NewEventForm = ({ isOpen, handleClose }) => {
             }
             const data = await response.json();
             console.log('Event created:', data);
-            // Optionally, you can redirect the user to a different page or show a success message
+
+            setToastMessage('Event created successfully');
         } catch (error) {
             console.error('Error creating event:', error);
-            // Handle error, show error message, etc.
+            setToastMessage('Failed to create event. Please try again later.');
+        } finally {
+            setLoading(false);
+            handleClose(); // Close the modal regardless of success or error
         }
     };
+
+    useEffect(() => {
+        if (toastMessage) {
+            toast.success(toastMessage);
+            setToastMessage(null); // Reset the toast message
+        }
+    }, [toastMessage]);
 
     return (
         <ReactModal
@@ -56,27 +71,24 @@ const NewEventForm = ({ isOpen, handleClose }) => {
                     zIndex: 9999,
                 },
                 content: {
-                    top: '90%',
+                    top: '70%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
-                    width: '80%',
-                    height: '85%',
-                    // maxWidth: '800px',
-                    // maxHeight: '90vh',
+                    width: '90%',
+                    height: '80vh',
+                    maxWidth: '1000px', // Set a max-width for larger screens
                     margin: 'auto',
                     borderRadius: '8px',
-                    padding: '0',
+                    padding: '20px',
                     border: 'none',
                     display: 'flex',
-                    justifyContent: 'center',
+                    flexDirection: 'column',
                     alignItems: 'center',
-                    overflow: 'hidden',
+                    overflow: 'auto',
                 },
             }}
         >
-
-
-            <form onSubmit={handleSubmit} className="container mx-auto py-12">
+            <form onSubmit={handleSubmit} className="w-full">
                 <h2 className="text-3xl font-bold mb-6">Create New Event</h2>
                 <div className="mb-4">
                     <label htmlFor="title" className="block mb-2">Title</label>
@@ -137,8 +149,16 @@ const NewEventForm = ({ isOpen, handleClose }) => {
                         required
                     />
                 </div>
-                <button type="submit" className="primary_button2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                    Create Event
+                <button type="submit" className="primary_button2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">
+                    {loading ? <Oval
+                        visible={true}
+                        height="80"
+                        width="80"
+                        color="#4fa94d"
+                        ariaLabel="oval-loading"
+                        wrapperStyle={{}}
+                        wrapperClass=""
+                    /> : 'Create Event'}
                 </button>
             </form>
         </ReactModal>
