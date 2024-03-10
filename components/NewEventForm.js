@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaGrinHearts } from 'react-icons/fa';
+import { Oval } from 'react-loader-spinner';
 import ReactModal from 'react-modal';
 import { toast } from 'react-toastify';
 
@@ -32,7 +33,7 @@ const NewEventForm = ({ isOpen, handleClose }) => {
         }
 
         try {
-            const response = await fetch('https://abhshar-backend.onrender.com/upload', {
+            const response = await fetch('https://abshar-backend.onrender.com/upload', {
                 method: 'POST',
                 body: eventData,
             });
@@ -41,8 +42,11 @@ const NewEventForm = ({ isOpen, handleClose }) => {
             }
             const data = await response.json();
             console.log('Event created:', data);
-
             setToastMessage('Event created successfully');
+            setTimeout(() => {
+                window.location.reload()
+            }, 2000);
+
         } catch (error) {
             console.error('Error creating event:', error);
             setToastMessage('Failed to create event. Please try again later.');
@@ -71,7 +75,7 @@ const NewEventForm = ({ isOpen, handleClose }) => {
                     zIndex: 9999,
                 },
                 content: {
-                    top: '70%',
+                    top: '80%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
                     width: '90%',
@@ -149,15 +153,9 @@ const NewEventForm = ({ isOpen, handleClose }) => {
                         required
                     />
                 </div>
-                <button type="submit" className="primary_button2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-full">
+                <button type="submit" className="primary_button2 text-white font-bold py-2 px-4 rounded w-full">
                     {loading ? <Oval
-                        visible={true}
-                        height="80"
-                        width="80"
-                        color="#4fa94d"
-                        ariaLabel="oval-loading"
-                        wrapperStyle={{}}
-                        wrapperClass=""
+                        height="30" width="100" color="white"
                     /> : 'Create Event'}
                 </button>
             </form>

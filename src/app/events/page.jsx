@@ -23,7 +23,7 @@ const EventsPage = () => {
                     throw new Error('Failed to fetch events');
                 }
                 const events = await response.json();
-                setEventsData(events);
+                setEventsData(events.reverse());
             } catch (err) {
                 setError(err.message || 'Failed to load events');
             } finally {
