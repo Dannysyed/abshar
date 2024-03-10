@@ -4,14 +4,16 @@ import React, { useState, useEffect } from 'react';
 import EventCard from '../../../components/EventCard';
 import NewEventForm from '../../../components/NewEventForm';
 import { isPast } from 'date-fns';
+import Modal from 'react-modal';
 import imagess from '../../../public/images/classroom.jpg';
+import { FaBeer, FaPlus } from "react-icons/fa";
 
 const EventsPage = () => {
     const [eventsData, setEventsData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [isAdmin, setIsAdmin] = useState(false); // Simulate admin check
-
+    const [isModalOpen, setIsModalOpen] = useState(false);
     useEffect(() => {
         const fetchEvents = async () => {
             try {
@@ -35,15 +37,25 @@ const EventsPage = () => {
         setIsAdmin(true); // Set to true if the user is an admin
     }, []);
 
+
     const handleCreateEvent = (newEventData) => {
         // Handle event creation logic here
         console.log(newEventData);
+        setIsModalOpen(false); // Close the modal after creating the event
     };
-
     return (
-        <div title="Events That Have Happened">
+        <div >
             <div className="container mx-auto py-12">
-                <h1 className="text-3xl font-bold mb-8 text-center">Past Events</h1>
+
+                <div>
+                    <h1 className="text-3xl font-bold mb-8 text-center">Past Events</h1>
+                    <FaPlus onClick={() => setIsModalOpen(true)} >
+                        Create New Event
+                    </FaPlus>
+
+                </div>
+
+
                 {loading ? (
                     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                         <Hearts
@@ -61,13 +73,21 @@ const EventsPage = () => {
                 ) : eventsData.length === 0 ? (
                     <p>No events have happened yet.</p>
                 ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
                         {eventsData.map((event) => (
                             <EventCard key={event._id} event={event} />
                         ))}
                     </div>
                 )}
-                {isAdmin && <NewEventForm onSubmit={handleCreateEvent} />}
+
+                {isAdmin && (
+                    <div>
+
+                        <Modal isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)} className="modal" overlayClassName="overlay">
+                            <NewEventForm onSubmit={handleCreateEvent} isOpen={isModalOpen} handleClose={handleCreateEvent} />
+                        </Modal>
+                    </div>
+                )}
             </div>
         </div>
     );

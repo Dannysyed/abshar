@@ -34,7 +34,7 @@ const EventCard = ({ event }) => {
             )}
             <div className="mt-4 flex justify-between items-center">
                 <Link href={`/events/${event._id}`}>
-                    <p className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                    <p className="primary_button2 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
                         Learn More
                     </p>
                 </Link>
