@@ -3,6 +3,8 @@ import '../../styles/globals.css'
 import Head from 'next/head';
 import icon from '../../public/favicon.ico'
 import Footer from '../../components/Footer';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export const metadata = {
     title: 'Abshar',
     description: 'Version 1.0.1'
@@ -20,6 +22,8 @@ const RootLayout = ({ children }) => {
                 <Navbar />
                 {children}
                 <Footer />
+                <ToastContainer />
+
             </body>
         </html>
     )

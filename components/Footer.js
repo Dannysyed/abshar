@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import absharlogo from '../public/images/AbhsarLogo.png';
 import { FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { toast } from 'react-toastify';
+
 
 const Footer = () => {
     const [email, setEmail] = useState('');
@@ -12,7 +14,7 @@ const Footer = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('http://localhost:3001/subscribe', {
+            const response = await fetch('https://abshar-backend.onrender.com/subscribe', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -21,13 +23,19 @@ const Footer = () => {
             });
 
             if (response.ok) {
+                toast.success('Thank you for subscribing!')
+                setEmail('');
                 setIsSubscribed(true);
+
             } else {
+                toast.warn('Error occured Please try again')
                 const errorData = await response.json();
                 throw new Error(errorData.message);
+
             }
         } catch (error) {
             console.error('Subscription error:', error);
+            toast.error(error);
             // Handle the error (e.g., show an error message to the user)
         }
     };
