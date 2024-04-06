@@ -15,10 +15,20 @@ import EducationIcon from '../../public/icons/education.png';
 import HealthcareIcon from '../../public/icons/healthcare.png';
 import CommunityIcon from '../../public/icons/partners.png';
 import { toast } from 'react-toastify';
+import GetInvolvedModal from '../../components/GetInvolvedModal';
 const HomePage = () => {
     const [pastEvents, setPastEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsModalOpen(false);
+    };
 
     useEffect(() => {
 
@@ -56,9 +66,10 @@ const HomePage = () => {
                                 Our NGO is dedicated to making a positive impact on the community. Through various initiatives and programs, we strive to bring about positive changes in people's lives.
                             </p>
 
-                            <button className='bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300'>
+                            <button className='bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300' onClick={handleOpenModal}>
                                 Get Involved
                             </button>
+                            <GetInvolvedModal isOpen={isModalOpen} handleClose={handleCloseModal} />
                         </div>
                         <div className='basis-2/5 ' >
                             <Lottie animationData={codingAni} loop={true} className='h-[50vh] sm:h-[70vh]' />

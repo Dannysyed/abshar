@@ -1,49 +1,85 @@
+'use client'
+import React, { useState } from 'react';
 import Image from 'next/image';
-import React from 'react'
-import absharlogo from '../public/images/AbhsarLogo.png'
-import { FiMousePointer, FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedin } from "react-icons/fi";
+import absharlogo from '../public/images/AbhsarLogo.png';
+import { FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedin } from 'react-icons/fi';
+
 const Footer = () => {
+    const [email, setEmail] = useState('');
+    const [isSubscribed, setIsSubscribed] = useState(false);
+
+    const handleSubscribe = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:3001/subscribe', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ email })
+            });
+
+            if (response.ok) {
+                setIsSubscribed(true);
+            } else {
+                const errorData = await response.json();
+                throw new Error(errorData.message);
+            }
+        } catch (error) {
+            console.error('Subscription error:', error);
+            // Handle the error (e.g., show an error message to the user)
+        }
+    };
+
+
     return (
-        <footer className="body_color py-6 rounded-fullxl">
-            <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center ">
+        <footer className="bg-gray-100 py-10 rounded-xl">
+            <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center space-y-6 lg:space-y-0">
                 {/* Left side: Contact, Address, Mail, Socials */}
-                <div className="mb-4 lg:mb-0 lg:pr-8">
-                    <p className="mb-2">Contact: +91 8899037321</p>
-                    <p className="mb-2">Address: Uri, Kashmir</p>
+                <div className="lg:pr-8 space-y-2">
+                    <p>Contact: +91 8899037321</p>
+                    <p>Address: Uri, Kashmir</p>
                     <p>Email: abshartrust2021@gmail.com</p>
-                    <div className="flex gap-4 mt-2 lg:mt-0">
-                        <a href="https://www.facebook.com/abshar_trust" target="_blank" rel="noopener noreferrer"><FiFacebook style={{ fontSize: '24px' }} /></a>
-                        <a href="https://www.instagram.com/abshar_trust" target="_blank" rel="noopener noreferrer"><FiInstagram style={{ fontSize: '24px' }} /></a>
-                        <a href="https://twitter.com/abshartrust?lang=en" target="_blank" rel="noopener noreferrer"><FiTwitter style={{ fontSize: '24px' }} /></a>
-                        <a href="https://www.linkedin.com/company/aabshar-source-of-humanity/" target="_blank" rel="noopener noreferrer"><FiLinkedin style={{ fontSize: '24px' }} /></a>
-                        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer"><FiGithub style={{ fontSize: '24px' }} /></a>
+                    <div className="flex gap-4">
+                        <a href="https://www.facebook.com/abshar_trust" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors duration-200"><FiFacebook size={24} /></a>
+                        <a href="https://www.instagram.com/abshar_trust" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600 transition-colors duration-200"><FiInstagram size={24} /></a>
+                        <a href="https://twitter.com/abshartrust?lang=en" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-200"><FiTwitter size={24} /></a>
+                        <a href="https://www.linkedin.com/company/aabshar-source-of-humanity/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors duration-200"><FiLinkedin size={24} /></a>
+                        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors duration-200"><FiGithub size={24} /></a>
                     </div>
                 </div>
                 {/* Center: Logo */}
-                <div className="text-center lg:text-left mb-4 lg:mb-0">
-                    {/* Your NGO logo */}
-                    <Image src={absharlogo} alt="NGO Logo" className="w-200 h-200 mx-auto lg:mx-0" />
+                <div className="flex justify-center lg:justify-start">
+                    <Image src={absharlogo} alt="NGO Logo" width={100} height={100} />
                 </div>
                 {/* Right side: Sign up for Newsletter */}
-                <div className="text-center lg:text-right">
-                    <p className="mb-2">Sign up for Newsletter</p>
-                    {/* Newsletter signup form */}
-                    <form className="flex justify-center lg:justify-end">
+                <div className="text-center lg:text-right space-y-2">
+                    <p>Sign up for our Newsletter</p>
+                    <form className="flex justify-center lg:justify-end" onSubmit={handleSubscribe}>
                         <input
                             type="email"
                             placeholder="Your email"
                             className="border py-2 px-3 rounded-md mr-2"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
                         />
-                        <button className="bg-green-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
-                            Subscribe
+                        <button
+                            type="submit"
+                            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-md transition duration-300"
+                            disabled={isSubscribed}
+                        >
+                            {isSubscribed ? 'Subscribed' : 'Subscribe'}
                         </button>
                     </form>
+                    {isSubscribed && <p className="text-sm mt-2 text-green-600">Thank you for subscribing!</p>}
                 </div>
             </div>
             {/* Bottom: Copyright */}
-            <p className="text-center text-xs mt-4">&copy; 2023 Abshar. All Rights Reserved.</p>
+            <p className="text-center text-xs mt-6">&copy; 2023 Abshar. All Rights Reserved.</p>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;
