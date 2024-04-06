@@ -20,7 +20,7 @@ const EventsPage = () => {
     useEffect(() => {
         const fetchEvents = async () => {
             try {
-                const response = await fetch('https://abshar-backend.onrender.com/events'); // Assuming you have an Express route to fetch events
+                const response = await fetch(`${baseUrl}/events`); // Assuming you have an Express route to fetch events
                 if (!response.ok) {
                     throw new Error('Failed to fetch events');
                 }

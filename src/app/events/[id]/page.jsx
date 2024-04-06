@@ -16,7 +16,7 @@ const EventDetailPage = ({ params }) => {
     useEffect(() => {
         const fetchEvent = async () => {
             try {
-                const response = await fetch(`https://abshar-backend.onrender.com/events/${params.id}`);
+                const response = await fetch(`${baseUrl}/events/${params.id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch event');
                 }

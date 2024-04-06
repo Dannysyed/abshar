@@ -34,7 +34,7 @@ const HomePage = () => {
 
         const fetchPastEvents = async () => {
             try {
-                const response = await fetch('https://abshar-backend.onrender.com/events');
+                const response = await fetch(`${baseUrl}/events`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch past events');
                 }

@@ -14,7 +14,7 @@ const Footer = () => {
         e.preventDefault();
 
         try {
-            const response = await fetch('https://abshar-backend.onrender.com/subscribe', {
+            const response = await fetch(`${baseUrl}/subscribe`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -33,7 +33,7 @@ const NewEventForm = ({ isOpen, handleClose }) => {
         }
 
         try {
-            const response = await fetch('https://abshar-backend.onrender.com/upload', {
+            const response = await fetch(`${baseUrl}/upload`, {
                 method: 'POST',
                 body: eventData,
             });
