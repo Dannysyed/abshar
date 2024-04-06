@@ -43,7 +43,7 @@ const EventsPage = () => {
     };
 
     const verifyAdmin = () => {
-        if (adminCode === 's') { // Replace 'secretCode' with your actual admin code
+        if (adminCode === 'Aamir123@') { // Replace 'secretCode' with your actual admin code
             setIsAdmin(true);
         } else {
             toast.warn('Incorrect admin code');

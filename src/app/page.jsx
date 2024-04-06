@@ -90,7 +90,7 @@ const HomePage = () => {
                                     We focus on providing education, healthcare, and support to underprivileged communities. Our aim is to create sustainable solutions to societal issues.
                                 </p>
                                 {/* See Pics button */}
-                                <button className='bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg'>
+                                <button className='bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg' onClick={() => { }}>
                                     Check out Page
                                 </button>
                             </div>
@@ -124,7 +124,7 @@ const HomePage = () => {
                                 <h3 className='text-xl font-semibold mb-4'>Education Initiatives</h3>
                                 <p className='text-base'>
                                     Our educational programs have impacted
-                                    <span className='text-green-500 font-bold'> 5000+ students</span>,
+                                    <span className='text-green-500 font-bold'> 500+ students</span>,
                                     providing them with access to quality education and transforming their lives.
                                 </p>
                             </div>
@@ -133,7 +133,7 @@ const HomePage = () => {
                                 <h3 className='text-xl font-semibold mb-4'>Healthcare Support</h3>
                                 <p className='text-base'>
                                     Through health campaigns and medical services, we've reached
-                                    <span className='text-green-500 font-bold'> 10,000+ people</span> in need,
+                                    <span className='text-green-500 font-bold'> 1,000+ people</span> in need,
                                     providing essential healthcare services and promoting a healthier community.
                                 </p>
                             </div>
@@ -142,7 +142,7 @@ const HomePage = () => {
                                 <h3 className='text-xl font-semibold mb-4'>Community Development</h3>
                                 <p className='text-base'>
                                     Our community development initiatives have led to the completion of
-                                    <span className='text-green-500 font-bold'> 20+ projects</span>,
+                                    <span className='text-green-500 font-bold'> 10+ projects</span>,
                                     enhancing infrastructures and creating a positive impact on local communities.
                                 </p>
                             </div>
