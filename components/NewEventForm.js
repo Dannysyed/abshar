@@ -3,7 +3,7 @@ import { FaGrinHearts } from 'react-icons/fa';
 import { Oval } from 'react-loader-spinner';
 import ReactModal from 'react-modal';
 import { toast } from 'react-toastify';
-
+import baseUrl from '../config/util'
 const NewEventForm = ({ isOpen, handleClose }) => {
     const [formData, setFormData] = useState({
         title: '',

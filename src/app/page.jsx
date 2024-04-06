@@ -15,6 +15,7 @@ import EducationIcon from '../../public/icons/education.png';
 import HealthcareIcon from '../../public/icons/healthcare.png';
 import CommunityIcon from '../../public/icons/partners.png';
 import { toast } from 'react-toastify';
+import baseUrl from '../../config/util'
 import GetInvolvedModal from '../../components/GetInvolvedModal';
 const HomePage = () => {
     const [pastEvents, setPastEvents] = useState([]);

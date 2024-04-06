@@ -7,7 +7,7 @@ import { FaPlus } from 'react-icons/fa';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Modal from 'react-modal';
-
+import baseUrl from '../../../config/util'
 const EventsPage = () => {
     const [eventsData, setEventsData] = useState([]);
     const [loading, setLoading] = useState(true);

@@ -4,7 +4,7 @@ import Image from 'next/image';
 import absharlogo from '../public/images/AbhsarLogo.png';
 import { FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedin } from 'react-icons/fi';
 import { toast } from 'react-toastify';
-
+import baseUrl from '../config/util'
 
 const Footer = () => {
     const [email, setEmail] = useState('');

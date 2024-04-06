@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const layout = ({ children }) => {
     return (
         <>
-
             <div>{children}</div>
             <ToastContainer />
         </>
