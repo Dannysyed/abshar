@@ -9,8 +9,9 @@ import heart from '../../public/images/Animation - 1704131701382.json'
 import school from '../../public/images/school.jpg'
 import classroom from '../../public/images/classroom.jpg'
 import codingAni from '../../public/images/Animation - 1704125449837.json'
+import helpi from '../../public/images/Animation - 1712726171517.json'
 import Image from 'next/image';
-
+import donateImage from '../../public/images/helpinghands1.png'
 import EducationIcon from '../../public/icons/education.png';
 import HealthcareIcon from '../../public/icons/healthcare.png';
 import CommunityIcon from '../../public/icons/partners.png';
@@ -90,9 +91,11 @@ const HomePage = () => {
                                     We focus on providing education, healthcare, and support to underprivileged communities. Our aim is to create sustainable solutions to societal issues.
                                 </p>
                                 {/* See Pics button */}
-                                <button className='bg-green-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg' onClick={() => { }}>
-                                    Check out Page
-                                </button>
+
+
+                                <div className='basis-2/5 ' >
+                                    <Lottie animationData={helpi} loop={true} className='h-[22vh] sm:h-[20vh]' />
+                                </div>
                             </div>
                             {/* Right Side */}
                             <div className='border p-6 rounded-md shadow-lg hover:scale-105 hover:shadow-xl transition-transform'>
