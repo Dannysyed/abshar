@@ -23,7 +23,7 @@ const Navbar = () => {
     const menuItems = [
         {
             href: '/',
-            title: 'HomePage',
+            title: 'Home',
         },
         {
             href: '/events',
