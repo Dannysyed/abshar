@@ -9,20 +9,22 @@ import {
 } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import football from '../public/images/Football_heroImage1.jpg';
+import classrom from '../public/images/classroom.jpg'
 import Socks from '../public/images/socks.jpg';
 import Football2 from '../public/images/Football2.jpg';
+import absharFootball from '../public/images/football_abshar.jpeg'
 import Image from 'next/image';
 
 const items = [
     {
-        src: football,
+        src: absharFootball,
         altText: 'Slide 1',
         caption: 'FootBall Event',
         description: 'Empowering Communities, Changing Lives.',
         key: 1,
     },
     {
-        src: Socks,
+        src: classrom,
         altText: 'Slide 2',
         caption: 'Supporting Those in Need',
         description: 'Providing Education, Health, and Essential Support.',
