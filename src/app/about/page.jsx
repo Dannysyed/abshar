@@ -71,7 +71,7 @@ const AboutPage = () => {
                         <p className='text-lg mb-6'>
                             "When we started Abshar, the vision was to create an organization that not only addresses immediate needs but also empowers communities to build a better future. We are grateful for the support and dedication of our team and volunteers, who have been instrumental in bringing this vision to life. Together, we will continue to make a difference, one life at a time."
                         </p>
-                        <p className='text-lg font-bold'>- Obaid ur Rehman and Aamir Rehman, Founders of Abshar</p>
+                        <p className='text-lg font-bold'> -Founders of Abshar</p>
                     </div>
                 </div>
             </section>
