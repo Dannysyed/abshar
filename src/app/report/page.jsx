@@ -9,9 +9,9 @@ import youth1 from "../../../public/reportImages/youth/acc.jpg";
 import youth2 from "../../../public/reportImages/youth/acc1.jpg";
 import youth3 from "../../../public/reportImages/youth/acc1.jpg";
 
-import rural1 from "../../../public/reportImages/rural/11.jpg";
-import rural2 from "../../../public/reportImages/rural/12.jpg";
-import rural3 from "../../../public/reportImages/rural/13.jpg";
+import rural1 from "../../../public/reportImages/Rural/11.jpg";
+import rural2 from "../../../public/reportImages/Rural/12.jpg";
+import rural3 from "../../../public/reportImages/Rural/13.jpg";
 
 const ReportPage = () => {
   return (
