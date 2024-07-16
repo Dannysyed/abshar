@@ -7,7 +7,7 @@ import food1 from "../../../public/reportImages/food/5.jpg";
 import food2 from "../../../public/reportImages/food/6.jpg";
 import youth1 from "../../../public/reportImages/youth/acc.jpg";
 import youth2 from "../../../public/reportImages/youth/acc1.jpg";
-import youth3 from "../../../public/reportImages/youth/acc1.jpg";
+import youth3 from "../../../public/reportImages/youth/acc2.jpg";
 
 import rural1 from "../../../public/reportImages/Rural/11.jpg";
 import rural2 from "../../../public/reportImages/Rural/12.jpg";
