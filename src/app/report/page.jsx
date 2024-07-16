@@ -1,6 +1,17 @@
 import React from "react";
-import Football2 from "../../../public/images/Football2.jpg";
 import Image from "next/image";
+import education1 from "../../../public/reportImages/education/99.jpg";
+import education2 from "../../../public/reportImages/education/100.jpg";
+import education3 from "../../../public/reportImages/education/101.jpg";
+import food1 from "../../../public/reportImages/food/5.jpg";
+import food2 from "../../../public/reportImages/food/6.jpg";
+import youth1 from "../../../public/reportImages/youth/acc.jpg";
+import youth2 from "../../../public/reportImages/youth/acc1.jpg";
+import youth3 from "../../../public/reportImages/youth/acc1.jpg";
+
+import rural1 from "../../../public/reportImages/rural/11.jpg";
+import rural2 from "../../../public/reportImages/rural/12.jpg";
+import rural3 from "../../../public/reportImages/rural/13.jpg";
 
 const ReportPage = () => {
   return (
@@ -58,32 +69,32 @@ const ReportPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative w-full h-64">
             <Image
-              src={Football2}
+              src={education1}
               alt="Stationery distribution"
               layout="fill"
               objectFit="cover"
               objectPosition="center"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
             />
           </div>
           <div className="relative w-full h-64">
             <Image
-              src={Football2}
+              src={education2}
               alt="Shoes distribution"
               layout="fill"
               objectFit="cover"
               objectPosition="center"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
             />
           </div>
           <div className="relative w-full h-64">
             <Image
-              src={Football2}
+              src={education3}
               alt="Uniform distribution"
               layout="fill"
               objectFit="cover"
               objectPosition="center"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
             />
           </div>
         </div>
@@ -121,22 +132,22 @@ const ReportPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="relative w-full h-64">
             <Image
-              src={Football2}
+              src={food1}
               alt="Food distribution"
               layout="fill"
               objectFit="cover"
               objectPosition="center"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
             />
           </div>
           <div className="relative w-full h-64">
             <Image
-              src={Football2}
+              src={food2}
               alt="Emergency food assistance"
               layout="fill"
               objectFit="cover"
               objectPosition="center"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
             />
           </div>
         </div>
@@ -176,25 +187,35 @@ const ReportPage = () => {
             eco-friendly habits.
           </li>
         </ul>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative w-full h-64">
             <Image
-              src={Football2}
+              src={rural1}
               alt="Tree plantation"
               layout="fill"
               objectFit="cover"
               objectPosition="center"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
             />
           </div>
           <div className="relative w-full h-64">
             <Image
-              src={Football2}
+              src={rural2}
               alt="Cleanliness campaign"
               layout="fill"
               objectFit="cover"
               objectPosition="center"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
+            />
+          </div>
+          <div className="relative w-full h-64">
+            <Image
+              src={rural3}
+              alt="Awareness program"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
             />
           </div>
         </div>
@@ -235,31 +256,41 @@ const ReportPage = () => {
             performance and prepare them for higher-level competitions.
           </li>
         </ul>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <div className="relative w-full h-64">
             <Image
-              src={Football2}
-              alt="Tree plantation"
+              src={youth1}
+              alt="Sports equipment distribution"
               layout="fill"
               objectFit="cover"
               objectPosition="center"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
             />
           </div>
           <div className="relative w-full h-64">
             <Image
-              src={Football2}
-              alt="Cleanliness campaign"
+              src={youth2}
+              alt="Sports tournament"
               layout="fill"
               objectFit="cover"
               objectPosition="center"
-              className="rounded-lg shadow-lg"
+              className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
+            />
+          </div>
+          <div className="relative w-full h-64">
+            <Image
+              src={youth3}
+              alt="Coaching and training"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="center"
+              className="rounded-lg shadow-lg transition-transform transform hover:scale-105"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-12 px-4 md:px-12 lg:px-24 shadow-md rounded-lg text-center mb-12">
+      <section className="bg-white py-12 px-4 md:px-12 lg:px-24 text-center mb-12">
         <h3
           className="text-xl md:text-2xl font-bold mb-4"
           style={{ color: "#16984c" }}
