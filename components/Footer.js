@@ -6,7 +6,7 @@ import partner1 from '../public/images/partner1.jpeg';
 import partner2 from '../public/images/partner2.jpeg';
 import partner3 from '../public/images/partner3.jpeg';
 
-import { FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedin } from 'react-icons/fi';
+import { FiFacebook, FiInstagram, FiTwitter, FiGithub, FiLinkedin, FiPhone, FiMail } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import baseUrl from '../config/util';
 
@@ -47,16 +47,18 @@ const Footer = () => {
         <footer className="bg-gray-100 py-10 rounded-xl">
             <div className="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center space-y-6 lg:space-y-0 lg:space-x-8">
                 {/* Left side: Contact, Address, Mail, Socials */}
-                <div className="lg:pr-8 space-y-2">
+                <div className="lg:pr-8 space-y-3 ">
                     <p>Contact: +91 8899037321</p>
                     <p>Address: Uri, Kashmir</p>
-                    <p>Email: abshartrust2021@gmail.com</p>
-                    <div className="flex gap-4">
-                        <a href="https://www.facebook.com/abshar_trust" target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 transition-colors duration-200"><FiFacebook size={24} /></a>
+                    <p className='mb-3'>Email: abshartrust2021@gmail.com</p>
+                    <div className="flex gap-9 justify-start">
+                        <a href="tel:+918899037321" className="hover:text-blue-500 transition-colors duration-200"><FiPhone size={24} /></a>
+                        <a href="mailto:abshartrust2021@gmail.com" className="hover:text-blue-500 transition-colors duration-200"><FiMail size={24} /></a>
                         <a href="https://www.instagram.com/abshar_trust" target="_blank" rel="noopener noreferrer" className="hover:text-pink-600 transition-colors duration-200"><FiInstagram size={24} /></a>
                         <a href="https://twitter.com/abshartrust?lang=en" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400 transition-colors duration-200"><FiTwitter size={24} /></a>
                         <a href="https://www.linkedin.com/company/aabshar-source-of-humanity/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-500 transition-colors duration-200"><FiLinkedin size={24} /></a>
-                        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-800 transition-colors duration-200"><FiGithub size={24} /></a>
+
+
                     </div>
                     {/* Partner Images */}
                     <div className="flex justify-start lg:justify-start mt-4 space-x-4">

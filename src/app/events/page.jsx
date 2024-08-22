@@ -16,7 +16,7 @@ const EventsPage = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [adminCode, setAdminCode] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const [eventsPerPage] = useState(5);
+    const [eventsPerPage] = useState(6);
     useEffect(() => {
         const fetchEvents = async () => {
             try {
